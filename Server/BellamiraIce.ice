@@ -19,9 +19,9 @@ struct UserType
 	class User
 	{	
 		int id;
-        string Fam;
-        string Name;
-        string Otch;
+        string fam;
+        string name;
+        string otch;
         UserType type;
         Group group;
 	};
