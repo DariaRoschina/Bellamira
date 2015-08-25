@@ -32,12 +32,12 @@ namespace Bellamira
         // public int teacherId { get tId; }
 
         // public int helperId { get hId; }
-         public int teacherId { get ; }
-         public int helperId { get ; }
+        public int teacherId { get; }
+        public int helperId { get; }
 
         public override string ToString()
         {
-            return string.Format("{0} {1}",NameGroup,Id);
+            return string.Format("{0} {1}", NameGroup, Id);
         }
     }
 }
