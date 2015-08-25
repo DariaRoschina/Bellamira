@@ -10,6 +10,13 @@ namespace Bellamira
 {
     public partial class User
     {
+        int g;
+        //int t;
+        public  User(int g /*,int t*/)
+        { /*this.t = t;*/
+          this.g = g;
+
+        }
         [PrimaryKey, Unique, AutoIncrement]
         public int Id { get; set; }
 
@@ -30,13 +37,14 @@ namespace Bellamira
         public string Otch { get; set; }
 
         [NotNull]
-        public int Type_Id { get; set; }
-
-        public int Student_Group_Id { get; set; }
+        public int Type_Id { get/* { return t*/;  }
+       
+         public int Student_Group_Id { get { return g; } }
+     //   public int Student_Group_Id { get ; set ;  }
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2}", Fam, Name, Otch);
+            return string.Format("{0} {1} {2} {3} ",Id, Fam, Name, Otch, Student_Group_Id);
         }
     }
 }

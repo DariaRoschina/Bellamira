@@ -48,15 +48,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="generated\BellamiraIce.cs" />
-    <Compile Include="src\DBClasses\DBGroups.cs" />
-    <Compile Include="src\DBClasses\DBTimeTable.cs" />
-    <Compile Include="src\DBClasses\DBUsers.cs" />
-    <Compile Include="src\DBClasses\DBUserTypes.cs" />
+    <Compile Include="src\Group.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="src\TimeTableEntry.cs" />
     <Compile Include="src\User.cs" />
+    <Compile Include="src\UserType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
