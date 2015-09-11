@@ -10,9 +10,9 @@ namespace Bellamira
 {
     public partial class User
     {
-        int g;
+        string g;
         //int t;
-        public User(int g /*,int t*/)
+        public User(string g /*,int t*/)
         { /*this.t = t;*/
             this.g = g;
 
@@ -39,12 +39,12 @@ namespace Bellamira
         [NotNull]
         public int Type_Id { get/* { return t*/; }
 
-        public int Student_Group_Id { get { return g; } }
+        public string Student_Group_Id { get { return g; } }
         //   public int Student_Group_Id { get ; set ;  }
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2} {3} ", Id, Fam, Name, Otch, Student_Group_Id);
+            return string.Format("{0} {1} {2} {3} {4} ", Id, Fam, Name, Otch, Student_Group_Id);
         }
     }
 }

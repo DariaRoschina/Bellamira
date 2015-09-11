@@ -17,11 +17,11 @@ namespace Bellamira
             { instance = new SDB(); }
             return instance;
         }
-
+     public  SQLiteConnection db1;
 
         public void connect()
         {
-            var db1 = new SQLiteConnection("Bellamira.db", true);
+           var  db1 = new SQLiteConnection("Bellamira.db", true);
         }
 
 
