@@ -15,7 +15,7 @@ namespace Bellamira
         static void Main(string[] args)
         {
             SQLiteConnection db;
-            SDB.getInstance();
+            SDB.getInstance().connect();
             db = SDB.getInstance().getDb();
             db.CreateTable<User>();
             db.CreateTable<Group>();

@@ -8,7 +8,7 @@ namespace Bellamira
 {
     public class SDB
     {
-        public SQLiteConnection db1;
+      static  public SQLiteConnection db1;
         static private SDB instance;
 
         private SDB() { }
@@ -17,16 +17,16 @@ namespace Bellamira
             if (instance == null)
             {
                 instance = new SDB();
-                var db1 = new SQLiteConnection("Bellamira.db", true);
+               
             }
             return instance;
         }
 
 
-        //public void connect()
-        //{
-        //    var db1 = new SQLiteConnection("Bellamira.db", true);
-        //}
+        public void connect()
+        {
+             db1 = new SQLiteConnection("Bellamira.db", true);
+        }
 
 
         public void disconnect()
