@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SQLite;
+﻿using SQLite;
 namespace Bellamira
 {
     public class SDB
@@ -17,20 +12,17 @@ namespace Bellamira
             if (instance == null)
             {
                 instance = new SDB();
-               
             }
             return instance;
         }
 
-
         public void connect()
         {
-             db1 = new SQLiteConnection("Bellamira.db", true);
+            db1 = new SQLiteConnection("Bellamira.db", true);
             User guest = new User("guest", "guest", "guest", "guest", "guest", null, null);
             db1.InsertOrReplace(guest);
         }
-
-
+        
         public void disconnect()
         {
             db1.Dispose();
@@ -42,6 +34,5 @@ namespace Bellamira
             if (db1 == null) { connect(); }
             return db1;
         }
-
     }
 }

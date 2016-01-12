@@ -17,7 +17,7 @@ namespace WebClient.Account
         protected void Page_load()
         {
             TypeUser.DataValueField = "NameType";
-            TypeUser.DataSource = BellamiraUserInfo.UserTypes;
+            TypeUser.DataSource = IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes().ToList<UserType>();
             TypeUser.DataBind();
         }
 
@@ -26,8 +26,7 @@ namespace WebClient.Account
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
 
-            Object o = TypeUser.SelectedItem.Attributes;
-            User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text, null, new Group());
+            User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text, IceApplication.getInstance().SessionPrx.getUserManager().getUserType(TypeUser.SelectedValue), new Group());
 
 
             IceApplication.getInstance().EntryPrx.Register(user);
@@ -58,9 +57,5 @@ namespace WebClient.Account
          //   }
         }
 
-        private class BellamiraUserInfo
-        {
-            public static List<UserType> UserTypes { get { return IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes().ToList<UserType>(); } }
-        }
     }
 }

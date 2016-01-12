@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ice;
 
 namespace Bellamira.src
@@ -40,8 +37,6 @@ namespace Bellamira.src
             return true;
         }
 
-       
-
         public override bool delUser(string login, Current current__)
         {
             try
@@ -56,8 +51,6 @@ namespace Bellamira.src
             }
             return true;
         }
-
-     
 
         public override bool delUserType(string login, Current current__)
         {
@@ -76,48 +69,44 @@ namespace Bellamira.src
 
         public override User[] getAllUsers(Current current__)
         {
-            User[] tmp = SDB.getInstance().getDb().Table<User>().ToArray();           
-            SDB.getInstance().disconnect();
-             return tmp;
-        }
-
-        public override UserType[] getAllUserTypes(Current current__)
-        {
-            UserType[] tmp = SDB.getInstance().getDb().Table<UserType>().ToArray();            
+            User[] tmp = SDB.getInstance().getDb().Table<User>().ToArray();
             SDB.getInstance().disconnect();
             return tmp;
         }
 
-      
+        public override UserType[] getAllUserTypes(Current current__)
+        {
+            UserType[] tmp = SDB.getInstance().getDb().Table<UserType>().ToArray();
+            SDB.getInstance().disconnect();
+            return tmp;
+        }
 
         public override User getUser(string login, Current current__)
         {
-            var user = SDB.getInstance().getDb().ExecuteScalar<User>("SELECT * FROM User WHERE Login='" + login+"'");
+            var user = SDB.getInstance().getDb().ExecuteScalar<User>("SELECT * FROM User WHERE Login='" + login + "'");
             SDB.getInstance().disconnect();
             return user;
         }
 
-        
         public override UserType getUserType(string nameType, Current current__)
         {
             var userT = SDB.getInstance().getDb().Table<UserType>();
             foreach (var i in userT)
             {
-                if (i.NameType == nameType) {
+                if (i.NameType == nameType)
+                {
                     SDB.getInstance().disconnect();
-                    return i; }
+                    return i;
+                }
             }
-             //var userT = SDB.getInstance().getDb().ExecuteScalar<UserType>("SELECT * FROM UserType WHERE NameType=?" , nameType);
             SDB.getInstance().disconnect();
             return null;
         }
-
-      
+        
         public override bool modifyUser(User u, string login, Current current__)
         {
             try
             {
-               
                 SDB.getInstance().getDb().Update(u);
                 SDB.getInstance().disconnect();
             }
@@ -129,14 +118,12 @@ namespace Bellamira.src
             return true;
         }
 
-      
-
         public override bool modifyUserType(UserType ut, string login, Current current__)
         {
             try
             {
-               SDB.getInstance().getDb().Update(ut);
-               SDB.getInstance().disconnect();
+                SDB.getInstance().getDb().Update(ut);
+                SDB.getInstance().disconnect();
             }
             catch (System.Exception ex)
             {

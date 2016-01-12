@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SQLite;
-using Bellamira;
+﻿using SQLite;
 namespace Bellamira
 {
     public partial class TimeTableEntry
@@ -15,7 +9,10 @@ namespace Bellamira
         [MaxLength(40), NotNull]
         public string DayWeek
         {
-            get { return dayWeek; }
+            get
+            {
+                return dayWeek;
+            }
             set
             {
                 dayWeek = value;
@@ -25,7 +22,10 @@ namespace Bellamira
         [MaxLength(40), NotNull]
         public long Time
         {
-            get { return time; }
+            get
+            {
+                return time;
+            }
             set
             {
                 time = value;
@@ -33,8 +33,8 @@ namespace Bellamira
         }
 
         public int teacherId { get; set; }
-        public int GroupId { get; set; }
 
+        public int GroupId { get; set; }
 
         public override string ToString()
         {

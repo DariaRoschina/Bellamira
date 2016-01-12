@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SQLite;
-using Bellamira;
+﻿using SQLite;
 namespace Bellamira
 {
     public partial class UserType
@@ -12,11 +6,16 @@ namespace Bellamira
         [PrimaryKey, Unique, AutoIncrement]
         public int Id
         {
-
-            get { return id; }
-
-          private  set { id = value; }
+            get
+            {
+                return id;
+            }
+            private set
+            {
+                id = value;
+            }
         }
+
         [MaxLength(40), NotNull]
         public string NameType
         {

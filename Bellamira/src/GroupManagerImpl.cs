@@ -11,7 +11,7 @@ namespace Bellamira.src
     {
         public override bool addGroup(Group gp, Current current__)
         {
-           // Console.WriteLine("UserManagerImpl.addUser() called");
+            Console.WriteLine("UserManagerImpl.addUser() called");
             try
             {
                 SDB.getInstance().getDb().Insert(gp);
@@ -99,7 +99,6 @@ namespace Bellamira.src
                     return i;
                 }
             }
-           // var group = SDB.getInstance().getDb().ExecuteScalar<Group>("SELECT * FROM Group WHERE nameGroup=" + nameGroup);
             SDB.getInstance().disconnect();
             return null;
         }
@@ -108,7 +107,6 @@ namespace Bellamira.src
         {
             try
             {
-
                 SDB.getInstance().getDb().Update(gp);
                 SDB.getInstance().disconnect();
             }

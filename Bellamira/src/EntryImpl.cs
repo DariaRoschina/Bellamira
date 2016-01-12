@@ -11,14 +11,14 @@ namespace Bellamira.src
 
     class EntryImpl : Bellamira.EntryDisp_
     {
-        
+
         public override SessionPrx login(string name, string password, Current current__)
         {
             Console.WriteLine("EntryImpl.login() called");
 
             User user = SDB.getInstance().getDb().Find<User>(name);
-            if (user!= null && user.password==password)
-            { 
+            if (user != null && user.password == password)
+            {
                 SessionImpl session = new SessionImpl();
                 SessionPrx session_prx = SessionPrxHelper.uncheckedCast(current__.adapter.addWithUUID(session));//создаю прокси для этой сессии
                 return session_prx;
@@ -42,12 +42,12 @@ namespace Bellamira.src
             Console.WriteLine(user.ToString());
 
             return session_prx;
-            
+
         }
 
         public override string Test(Current current__)
         {
-           Console.WriteLine("EntryImpl.Register() called");
+            Console.WriteLine("EntryImpl.Register() called");
 
             return "ok";
         }

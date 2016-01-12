@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ice;
 
 namespace Bellamira.src
@@ -15,8 +11,8 @@ namespace Bellamira.src
 
         public override UserManagerPrx getUserManager(Current current__)
         {
-            UserManagerPrx up =  UserManagerPrxHelper.uncheckedCast(current__.adapter.addWithUUID(user_mg));
-            return up; 
+            UserManagerPrx up = UserManagerPrxHelper.uncheckedCast(current__.adapter.addWithUUID(user_mg));
+            return up;
         }
 
         public override GroupManagerPrx getGroupManager(Current current__)
