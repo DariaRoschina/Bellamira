@@ -28,8 +28,12 @@ namespace WebClient.Account
 
             User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text,new UserType(), new Group());
 
-
-            IceApplication.getInstance().EntryPrx.Register(user);
+            try {
+                IceApplication.getInstance().EntryPrx.Register(user);
+            } catch (UserAlreadyExists uae)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "alert('User already exists!');", true);
+            }
                      
             
 

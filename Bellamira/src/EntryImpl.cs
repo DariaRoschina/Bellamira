@@ -11,14 +11,14 @@ namespace Bellamira.src
 
     class EntryImpl : Bellamira.EntryDisp_
     {
-        
+
         public override SessionPrx login(string name, string password, Current current__)
         {
             SDB.getInstance().connect();
             User user = SDB.getInstance().getDb().Find<User>(name);
             SDB.getInstance().disconnect();
-            if (user!= null && user.password==password)
-            { 
+            if (user != null && user.password == password)
+            {
                 SessionImpl session = new SessionImpl();
                 SessionPrx session_prx = SessionPrxHelper.uncheckedCast(current__.adapter.addWithUUID(session));//создаю прокси для этой сессии
                 return session_prx;
@@ -31,13 +31,20 @@ namespace Bellamira.src
 
         public override SessionPrx Register(User user, Current current__)
         {
-                                  
-                SessionImpl session = new SessionImpl();
-                SessionPrx session_prx = SessionPrxHelper.uncheckedCast(current__.adapter.addWithUUID(session));//создаю прокси для этой сессии
+
+            SessionImpl session = new SessionImpl();
+            SessionPrx session_prx = SessionPrxHelper.uncheckedCast(current__.adapter.addWithUUID(session));//создаю прокси для этой сессии
+            try
+            {
                 SDB.getInstance().getDb().Insert(user);
-                return session_prx;
-                       
-                    }
+            }
+            catch (SQLiteException sqlex)
+            {
+                throw new UserAlreadyExists();
+            }
+            return session_prx;
+
+        }
 
         public override string Test(Current current__)
         {
@@ -88,7 +95,7 @@ namespace Bellamira.src
             // }
 
 
-           //SDB.getInstance().disconnect();
+            //SDB.getInstance().disconnect();
 
             //return tmp; 
             return "ok";

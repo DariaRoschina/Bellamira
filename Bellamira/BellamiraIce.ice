@@ -45,11 +45,13 @@ module Bellamira
 	sequence<Group> groups;
 	sequence<TimeTableEntry> timeTable;
 
+	exception UserAlreadyExists {};
+
 	interface Entry 
 	{
 		Session * login(string name, string password);		
 		string Test();
-		Session * Register(User user);
+		Session * Register(User user) throws UserAlreadyExists;
 	};
 
 	interface Session 
