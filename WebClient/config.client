@@ -1,0 +1,9 @@
+Bellamira_entry.Proxy=bellamira_entry:default -p 10000 -h localhost
+
+Ice.Warn.Connections=1
+
+
+
+
+
+

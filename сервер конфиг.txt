@@ -1,0 +1,3 @@
+ContactDB.Endpoints=default -p 10000 -h localhost
+
+Ice.Warn.Connections=1
