@@ -65,9 +65,8 @@
             <div class="col-md-10">
 
                 
-                <asp:DropDownList ID="TypeUser" runat="server" DataSourceID ="TypeUser" AppendDataBoundItems="true">
-                         <asp:ListItem Text="<Select Subject>" Value="0" />
-                       <asp:ListItem Text="<BellamiraUsersInfo.UserTypes>" Value="0" />
+                <asp:DropDownList ID="TypeUser" runat="server">
+                        
                 </asp:DropDownList>
                  <asp:RequiredFieldValidator runat="server" ControlToValidate="TypeUser"
                     CssClass="text-danger" ErrorMessage="Поле заполнять обязательно." />

@@ -11,28 +11,16 @@ using System.Collections.Generic;
 using System.Web.UI.WebControls;
 
 namespace WebClient.Account
-{
+{ 
     public partial class Register : Page
     {
-       
-        public static class BellamiraUsersInfo
+        protected void Page_load()
         {
-            public static List<UserType> UserTypes
-            {
-                get
-                {
-                   return IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes().ToList<UserType>();
-                }
-            }
-            public static Group[] Groups
-            {
-                get
-                {
-                    return IceApplication.getInstance().SessionPrx.getGroupManager().getAllGroups();
-                }
-            }
-         }
-
+        TypeUser.DataValueField = "NameType";
+        TypeUser.DataSource = IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes();
+        TypeUser.DataBind();
+        }
+       
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
