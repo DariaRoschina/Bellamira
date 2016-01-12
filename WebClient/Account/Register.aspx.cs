@@ -16,9 +16,17 @@ namespace WebClient.Account
     {
         protected void Page_load()
         {
-        TypeUser.DataValueField = "NameType";
-        TypeUser.DataSource = IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes();
-        TypeUser.DataBind();
+            if (!IsPostBack)
+
+            {
+                TypeUser.DataValueField = "NameType";
+                TypeUser.DataSource = IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes();
+                TypeUser.DataBind();
+                Groups.DataValueField = "NameGroup";
+                Groups.DataSource = IceApplication.getInstance().SessionPrx.getGroupManager().getAllGroups();
+                Groups.DataBind();
+            }
+           
         }
        
         protected void CreateUser_Click(object sender, EventArgs e)
@@ -26,8 +34,10 @@ namespace WebClient.Account
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
 
-            User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text,new UserType(), new Group());
-
+            //User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text,new UserType(), new Group());
+            User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text, 
+                IceApplication.getInstance().SessionPrx.getUserManager().getUserType(TypeUser.SelectedValue),
+                IceApplication.getInstance().SessionPrx.getGroupManager().getGroupbyName(Groups.SelectedValue));
             try {
                 IceApplication.getInstance().EntryPrx.Register(user);
             } catch (UserAlreadyExists uae)

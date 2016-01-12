@@ -77,9 +77,7 @@
             <div class="col-md-10">
 
                 <asp:DropDownList ID="Groups" runat="server">
-                    <asp:ListItem>младшая</asp:ListItem>
-                    <asp:ListItem>средняя</asp:ListItem>
-                    <asp:ListItem>старшая</asp:ListItem>
+                   
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Groups"
                     CssClass="text-danger" ErrorMessage="Поле заполнять обязательно." />

@@ -14,6 +14,7 @@ namespace Bellamira.src
 
         public override SessionPrx login(string name, string password, Current current__)
         {
+            Console.WriteLine("EntryImpl. login() called");
             SDB.getInstance().connect();
             User user = SDB.getInstance().getDb().Find<User>(name);
             SDB.getInstance().disconnect();
@@ -31,12 +32,12 @@ namespace Bellamira.src
 
         public override SessionPrx Register(User user, Current current__)
         {
-
+            Console.WriteLine("EntryImpl. Register() called");
             SessionImpl session = new SessionImpl();
             SessionPrx session_prx = SessionPrxHelper.uncheckedCast(current__.adapter.addWithUUID(session));//создаю прокси для этой сессии
             try
             {
-                SDB.getInstance().getDb().Insert(user);
+               SDB.getInstance().getDb().Insert(user);
             }
             catch (SQLiteException sqlex)
             {

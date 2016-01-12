@@ -9,15 +9,19 @@ namespace Bellamira
     public partial class Group
 
     {
-        //int tId;
-        //int hID;
-        //public Group(int tId, int HID)
-        //{ this.tId = tId;
-        //    this.hID = hID;
-        //}
-
         [PrimaryKey, Unique, AutoIncrement]
-        public int Id { get; set; }
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+
+        }
 
         [MaxLength(40), NotNull]
         public string NameGroup
@@ -29,9 +33,7 @@ namespace Bellamira
             }
         }
 
-        // public int teacherId { get tId; }
 
-        // public int helperId { get hId; }
         public int teacherId { get; }
         public int helperId { get; set; }
 
