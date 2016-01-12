@@ -49,7 +49,7 @@ module Bellamira
 
 	interface Entry 
 	{
-		Session * login(string name, string password);		
+		Session * login(string name, string password) throws UserAlreadyExists;		
 		string Test();
 		Session * Register(User user) throws UserAlreadyExists;
 	};

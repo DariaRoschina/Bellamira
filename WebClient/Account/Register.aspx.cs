@@ -34,7 +34,7 @@ namespace WebClient.Account
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
 
-            //User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text,new UserType(), new Group());
+            
             User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text, 
                 IceApplication.getInstance().SessionPrx.getUserManager().getUserType(TypeUser.SelectedValue),
                 IceApplication.getInstance().SessionPrx.getGroupManager().getGroupbyName(Groups.SelectedValue));
