@@ -44,31 +44,36 @@ namespace WebClient.Account
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "alert('User already exists!');", true);
             }
-                     
-            
+
+            LoginHyperLink.NavigateUrl = "Login";
+            var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
+            if (!String.IsNullOrEmpty(returnUrl))
+            {
+                LoginHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
+            }
 
           
-           
-            
-           //  var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
 
-         ////  IdentityResult result = manager.Create(user, Password.Text);
-         //   if (result.Succeeded)
-         //   {
-                
 
-         //       // Дополнительные сведения о том, как включить подтверждение учетной записи и сброс пароля, см. по адресу: http://go.microsoft.com/fwlink/?LinkID=320771
-         //       //string code = manager.GenerateEmailConfirmationToken(user.Id);
-         //       //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-         //       //manager.SendEmail(user.Id, "Подтверждение учетной записи", "Подтвердите вашу учетную запись, щелкнув <a href=\"" + callbackUrl + "\">здесь</a>.");
+            //  var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
 
-         //       signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
-         //       IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-         //   }
-         //   else 
-         //   {
-         //       ErrorMessage.Text = result.Errors.FirstOrDefault();
-         //   }
+            ////  IdentityResult result = manager.Create(user, Password.Text);
+            //   if (result.Succeeded)
+            //   {
+
+
+            //       // Дополнительные сведения о том, как включить подтверждение учетной записи и сброс пароля, см. по адресу: http://go.microsoft.com/fwlink/?LinkID=320771
+            //       //string code = manager.GenerateEmailConfirmationToken(user.Id);
+            //       //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
+            //       //manager.SendEmail(user.Id, "Подтверждение учетной записи", "Подтвердите вашу учетную запись, щелкнув <a href=\"" + callbackUrl + "\">здесь</a>.");
+
+            //       signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
+            //       IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+            //   }
+            //   else 
+            //   {
+            //       ErrorMessage.Text = result.Errors.FirstOrDefault();
+            //   }
         }
     }
 }

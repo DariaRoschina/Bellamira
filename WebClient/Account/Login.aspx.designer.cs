@@ -31,13 +31,13 @@ namespace WebClient.Account {
         protected global::System.Web.UI.WebControls.Literal FailureText;
         
         /// <summary>
-        /// Email элемент управления.
+        /// LOGIN элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
+        protected global::System.Web.UI.WebControls.TextBox LOGIN;
         
         /// <summary>
         /// Password элемент управления.
@@ -65,14 +65,5 @@ namespace WebClient.Account {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink RegisterHyperLink;
-        
-        /// <summary>
-        /// OpenAuthLogin элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::WebClient.Account.OpenAuthProviders OpenAuthLogin;
     }
 }

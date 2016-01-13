@@ -17,15 +17,15 @@
                         </p>
                     </asp:PlaceHolder>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Адрес электронной почты</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="LOGIN" CssClass="col-md-2 control-label">Введите логин:</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                                CssClass="text-danger" ErrorMessage="Поле адреса электронной почты заполнять обязательно." />
+                            <asp:TextBox runat="server" ID="LOGIN" CssClass="form-control"  />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="LOGIN"
+                                CssClass="text-danger" ErrorMessage="Поле login заполнять обязательно." />
                         </div>
                     </div>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Пароль</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Введите пароль:</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="Поле пароля заполнять обязательно." />
@@ -57,9 +57,7 @@
         </div>
 
         <div class="col-md-4">
-            <section id="socialLoginForm">
-                <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-            </section>
+           
         </div>
     </div>
 </asp:Content>
