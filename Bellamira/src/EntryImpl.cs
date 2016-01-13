@@ -18,16 +18,25 @@ namespace Bellamira.src
             SDB.getInstance().connect();
             User user = SDB.getInstance().getDb().Find<User>(name);
             SDB.getInstance().disconnect();
-            if (user != null && user.password == password)
+            SessionImpl session = new SessionImpl();
+            SessionPrx session_prx = SessionPrxHelper.uncheckedCast(current__.adapter.addWithUUID(session));//создаю прокси для этой сессии
+            try
             {
-                SessionImpl session = new SessionImpl();
-                SessionPrx session_prx = SessionPrxHelper.uncheckedCast(current__.adapter.addWithUUID(session));//создаю прокси для этой сессии
-                return session_prx;
+                if (user != null && user.password == password)
+                {
+                 }
+                else
+                {
+                    // return null;
+                    throw new UserAlreadyExists();
+                }
             }
-            else
+            catch (SQLiteException sqlex)
             {
-                return null;
+                throw new UserAlreadyExists();
             }
+
+            return session_prx;
         }
 
         public override SessionPrx Register(User user, Current current__)
@@ -37,7 +46,7 @@ namespace Bellamira.src
             SessionPrx session_prx = SessionPrxHelper.uncheckedCast(current__.adapter.addWithUUID(session));//создаю прокси для этой сессии
             try
             {
-               SDB.getInstance().getDb().Insert(user);
+                SDB.getInstance().getDb().Insert(user);
             }
             catch (SQLiteException sqlex)
             {
@@ -46,10 +55,10 @@ namespace Bellamira.src
             return session_prx;
 
         }
-
+        
         public override string Test(Current current__)
         {
-            ;
+            
             Console.WriteLine("EntryImpl. Test() called");
 
             //SQLiteConnection db;
@@ -99,6 +108,7 @@ namespace Bellamira.src
             //SDB.getInstance().disconnect();
 
             //return tmp; 
+          
             return "ok";
         }
     }
