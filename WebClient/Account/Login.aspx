@@ -55,7 +55,13 @@
                 </p>
             </section>
         </div>
-
+         <div class="container body-content">
+            <hr />
+            <footer>
+                <p> <%: WebClient.Account.Test1.My_str1 %> </p>
+                
+            </footer>
+        </div>
         <div class="col-md-4">
            
         </div>

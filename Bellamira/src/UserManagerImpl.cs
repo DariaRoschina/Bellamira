@@ -92,9 +92,21 @@ namespace Bellamira.src
 
         public override User getUser(string login, Current current__)
         {
-            var user = SDB.getInstance().getDb().ExecuteScalar<User>("SELECT * FROM User WHERE Login='" + login+"'");
+            //var user = SDB.getInstance().getDb().ExecuteScalar<User>("SELECT * FROM User WHERE Login='" + login+"'");
+            // SDB.getInstance().disconnect();
+            //return user;
+            var user = SDB.getInstance().getDb().Table<User>();
+            foreach (var i in user)
+            {
+                if (i.Login == login)
+                {
+                    SDB.getInstance().disconnect();
+                    return i;
+                }
+            }
+
             SDB.getInstance().disconnect();
-            return user;
+            return null;
         }
 
         
@@ -107,7 +119,7 @@ namespace Bellamira.src
                     SDB.getInstance().disconnect();
                     return i; }
             }
-             //var userT = SDB.getInstance().getDb().ExecuteScalar<UserType>("SELECT * FROM UserType WHERE NameType=?" , nameType);
+             
             SDB.getInstance().disconnect();
             return null;
         }

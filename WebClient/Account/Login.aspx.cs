@@ -8,6 +8,21 @@ using WebClient.Models;
 using Bellamira;
 namespace WebClient.Account
 {
+    public static class Test1
+    {
+        public static string My_str1
+        {
+            get
+            {
+                return str1;
+            }
+            set
+            {
+                str1 = value;
+            }
+        }
+        public static string str1 = "fail";
+    }
     public partial class Login : Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -26,14 +41,21 @@ namespace WebClient.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
+            bool tmp;
             try
             {
                 IceApplication.getInstance().EntryPrx.login(LOGIN.Text, Password.Text);
+                 tmp = true;
             }
             catch (UserAlreadyExists uae)
             {
+                 tmp = false;
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "alert('User already exists!');", true);
             }
+
+            if (tmp == true) { Test1.My_str1 = IceApplication.getInstance().SessionPrx.getUserManager().getUser(LOGIN.Text).ToString(); }
+
+
             //if (IsValid)
             //{
             //    // Проверка пароля пользователя
