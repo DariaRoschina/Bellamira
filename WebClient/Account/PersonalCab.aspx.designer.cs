@@ -7,9 +7,9 @@
 // </автоматически создаваемое>
 //------------------------------------------------------------------------------
 
-namespace WebClient {
+namespace WebClient.Account {
     
     
-    public partial class About {
+    public partial class PersonalCab {
     }
 }

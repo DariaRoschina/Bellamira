@@ -185,6 +185,7 @@
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Account\PersonalCab.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\easing.js" />
@@ -379,6 +380,13 @@
     </Compile>
     <Compile Include="IceApplication.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Account\PersonalCab.aspx.cs">
+      <DependentUpon>PersonalCab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PersonalCab.aspx.designer.cs">
+      <DependentUpon>PersonalCab.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
