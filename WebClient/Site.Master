@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Мое приложение ASP.NET</title>
+    <title><%: Page.Title %> - Белламира</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -47,13 +47,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Имя приложения</a>
+                    
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Домашняя</a></li>
-                        <li><a runat="server" href="~/About">Информация</a></li>
-                        <li><a runat="server" href="~/Contact">Связаться</a></li>
+                        <li><a runat="server" href="~/HomePage">Главная</a></li>
+                        <li><a runat="server" href="~/">Занятия</a></li>
+                        <li><a runat="server" href="~/">Стоимость</a></li>
+                        <li><a runat="server" href="~/">Мероприятия</a></li>
+                        <li><a runat="server" href="~/About">Галерея</a></li>
+                        <li><a runat="server" href="~/Contact">Наши контакты</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -74,13 +77,22 @@
                 </div>
             </div>
         </div>
+        
+         <div class="container body-content">
+            <hr />
+            <footer>
+                <p> <%: WebClient.Account.Test1.My_str1 %> </p>
+                
+            </footer>
+        </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
                 <p> <%: WebClient.Test.My_str %> </p>
-                <p>&copy; <%: DateTime.Now.Year %> - мое приложение ASP.NET</p>
+                <p>&copy; <%: DateTime.Now.Year %> - ЦРП "Белламира"</p>
+   
             </footer>
         </div>
     </form>

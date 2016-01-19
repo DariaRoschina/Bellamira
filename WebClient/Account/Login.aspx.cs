@@ -21,7 +21,7 @@ namespace WebClient.Account
                 str1 = value;
             }
         }
-        public static string str1 = "fail";
+        public static string str1 = "  ";
     }
     public partial class Login : Page
     {
@@ -53,7 +53,9 @@ namespace WebClient.Account
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "alert('User already exists!');", true);
             }
 
-            if (tmp == true) { Test1.My_str1 = IceApplication.getInstance().SessionPrx.getUserManager().getUser(LOGIN.Text).ToString(); }
+            if (tmp == true) {
+
+                Test1.My_str1 = "Вы вошли как " + IceApplication.getInstance().SessionPrx.getUserManager().getUser(LOGIN.Text).Fam + " "+ IceApplication.getInstance().SessionPrx.getUserManager().getUser(LOGIN.Text).Name; }
 
 
             //if (IsValid)
