@@ -1,14 +1,12 @@
 ﻿<%@ Page Title="Регистрация" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WebClient.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %>.</h2>
+    <h2><%: Title %></h2>
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
-
-    <div class="form-horizontal">
-        <h4>Создание новой учетной записи</h4>
-        <hr />
+        <div class="form-horizontal">
+         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Login" CssClass="col-md-2 control-label">Логин</asp:Label>
@@ -87,7 +85,7 @@
             <div class="col-md-offset-2 col-md-10">
                 <asp:Button runat="server" OnClick="CreateUser_Click" Text="Регистрация"  CssClass="btn btn-default" />
                 <p>
-                    <asp:HyperLink runat="server" ID="LoginHyperLink"  ViewStateMode="Disabled">Вход</asp:HyperLink>
+                    
                 </p>
             </div>
         </div>

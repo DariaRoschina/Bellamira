@@ -38,14 +38,20 @@ namespace WebClient.Account
             User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text, 
                 IceApplication.getInstance().SessionPrx.getUserManager().getUserType(TypeUser.SelectedValue),
                 IceApplication.getInstance().SessionPrx.getGroupManager().getGroupbyName(Groups.SelectedValue));
+            bool tmp;
             try {
                 IceApplication.getInstance().EntryPrx.Register(user);
-            } catch (UserAlreadyExists uae)
-            {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "alert('User already exists!');", true);
+                tmp = true;
             }
-
-            Response.Redirect("Login.aspx");
+            catch (UserAlreadyExists uae)
+            {
+                tmp = false;
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertBox", "alert('Пользователь уже существует!');", true);
+            }
+            if (tmp == true)
+            {
+                Response.Redirect("Login.aspx");
+            }
            
         }
     }

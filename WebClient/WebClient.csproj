@@ -188,6 +188,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="HomePage.aspx" />
     <Content Include="Account\PersonalCab1.aspx" />
+    <Content Include="Account\Logout.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\easing.js" />
@@ -395,6 +396,13 @@
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="IceApplication.cs" />
+    <Compile Include="Account\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Account\PersonalCab1.aspx.cs">
       <DependentUpon>PersonalCab1.aspx</DependentUpon>
