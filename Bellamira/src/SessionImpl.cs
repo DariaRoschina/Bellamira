@@ -13,7 +13,7 @@ namespace Bellamira.src
 
         private GroupManager gmp = new GroupManagerImpl();
 
-        private TimeTableManager te = new TimeTableManager();
+        private TimeTableManagerImpl te = new TimeTableManagerImpl();
 
         public override UserManagerPrx getUserManager(Current current__)
         {

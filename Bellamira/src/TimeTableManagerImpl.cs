@@ -7,7 +7,7 @@ using Ice;
 
 namespace Bellamira.src
 {
-    public class TimeTableManager : TimeTableManagerDisp_
+    public class TimeTableManagerImpl : TimeTableManagerDisp_
     {
         public override bool addTimeTableEntry(TimeTableEntry te, Current current__)
         {

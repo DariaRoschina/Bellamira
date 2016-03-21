@@ -16,6 +16,12 @@ module Bellamira
 		string nameType;
 	};
 
+	struct EventType
+	{
+	int id;
+	string nameEvent;
+	};
+
 	class User
 	{	
 		string login;
@@ -33,6 +39,7 @@ module Bellamira
 		string dayWeek;
 		long time;
 		Group group;
+		EventType type;
 	};
 
 	interface Session;

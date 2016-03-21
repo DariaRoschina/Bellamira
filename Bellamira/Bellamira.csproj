@@ -126,7 +126,7 @@
     <Compile Include="src\SDB.cs" />
     <Compile Include="src\SessionImpl.cs" />
     <Compile Include="src\TimeTableEntry.cs" />
-    <Compile Include="src\TimeTableManager.cs" />
+    <Compile Include="src\TimeTableManagerImpl.cs" />
     <Compile Include="src\User.cs" />
     <Compile Include="src\UserManagerImpl.cs" />
     <Compile Include="src\UserType.cs" />
