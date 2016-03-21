@@ -62,7 +62,7 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="TypeUser" CssClass="col-md-2 control-label">Выберете тип пользователя:</asp:Label>
             <div class="col-md-10">
-                <% if (WebClient.IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes().Length == 3 ) { } %>
+               
                 
                 <asp:DropDownList ID="TypeUser" runat="server">
                   
