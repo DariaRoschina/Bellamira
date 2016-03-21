@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="Регистрация" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="WebClient.Account.Register" %>
-
+ 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %></h2>
+
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
@@ -61,10 +62,11 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="TypeUser" CssClass="col-md-2 control-label">Выберете тип пользователя:</asp:Label>
             <div class="col-md-10">
-
+                <% if (WebClient.IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes().Length == 3 ) { } %>
                 
                 <asp:DropDownList ID="TypeUser" runat="server">
-                        
+                  
+                        <asp:ListItem Value="Администратор" Text=""></asp:ListItem>
                 </asp:DropDownList>
                  <asp:RequiredFieldValidator runat="server" ControlToValidate="TypeUser"
                     CssClass="text-danger" ErrorMessage="Поле заполнять обязательно." />
@@ -89,8 +91,6 @@
                 </p>
             </div>
         </div>
-        
-        
-
+           
     </div>
 </asp:Content>

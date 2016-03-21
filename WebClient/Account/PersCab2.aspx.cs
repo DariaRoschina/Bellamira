@@ -11,7 +11,9 @@ namespace WebClient.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            PersonalData.YourName = Login.youname;
+            PersonalData.YourType = Login.youtype;
+            PersonalData.YourGroup = Login.yougroup;
         }
     }
 }

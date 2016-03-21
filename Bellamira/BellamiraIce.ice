@@ -91,7 +91,7 @@ module Bellamira
 	interface TimeTableManager
 	{
 		timeTable getAllTimeTable();
-		timeTable getTimeTableForGroup(Group gp);
+		timeTable getTimeTableForGroup(int id);
 		bool addTimeTableEntry(TimeTableEntry te);
 		bool delTimeTableEntry(int id);
 		bool modifyTimeTableEntry(TimeTableEntry te, int id);	

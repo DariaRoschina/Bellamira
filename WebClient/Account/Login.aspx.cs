@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using WebClient.Models;
+//using Microsoft.AspNet.Identity;
+//using Microsoft.AspNet.Identity.Owin;
+//using Owin;
+//using WebClient.Models;
 using Bellamira;
 using System.Web.Security;
 

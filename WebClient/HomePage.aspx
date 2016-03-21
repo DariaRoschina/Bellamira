@@ -3,7 +3,8 @@
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>
-    
+    
+
       <link type="text/css" rel="stylesheet" href="Content/rhinoslider-1.05.css" />
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 		<script type="text/javascript" src="Scripts/rhinoslider-1.05.min.js"></script>
@@ -31,7 +32,8 @@
 				width:600px;
 				margin:50px auto;
 			}
-		</style>
+		</style>
+
     <div>
         <ul id="slider">
 				<li><img src="img/slider/01.jpg" alt="" /></li>

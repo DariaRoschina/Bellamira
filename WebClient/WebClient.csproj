@@ -167,6 +167,7 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\pay.aspx" />
     <Content Include="Account\PersCab2.aspx" />
     <Content Include="Account\PersCab3.aspx" />
     <Content Include="Account\Register.aspx" />
@@ -178,6 +179,7 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\boxstyle.css" />
     <Content Include="Content\rhinoslider-1.05.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -271,7 +273,6 @@
     </Compile>
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -303,6 +304,13 @@
     </Compile>
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\pay.aspx.cs">
+      <DependentUpon>pay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\pay.aspx.designer.cs">
+      <DependentUpon>pay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\PersCab2.aspx.cs">
       <DependentUpon>PersCab2.aspx</DependentUpon>

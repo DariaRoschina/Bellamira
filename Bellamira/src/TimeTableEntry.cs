@@ -38,7 +38,7 @@ namespace Bellamira
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2}", DayWeek);
+            return string.Format("{0} {1} {2}",Id, DayWeek,Time);
         }
     }
 }

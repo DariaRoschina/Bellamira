@@ -83,5 +83,24 @@ namespace WebClient
                 return 1;
             }
         }
+        public int disconnect()
+        {
+            try
+            {
+                if (communicator != null || !communicator.isShutdown())
+                {
+                    communicator = null;
+                }
+                entryPrx = null;
+                entryPrx.Test();
+                return 0;
+            }
+            catch (System.Exception ex)
+            {
+                System.Console.Error.WriteLine(ex);
+                return 1;
+            }
+        }
+
     }
 }

@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Linq;
+//using System.Linq;
 using System.Web;
 using System.Web.UI;
-using Microsoft.AspNet.Identity;
+//using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using WebClient.Models;
+//using Owin;
+//using WebClient.Models;
 using Bellamira;
-using System.Collections.Generic;
-using System.Web.UI.WebControls;
+//using System.Collections.Generic;
+//using System.Web.UI.WebControls;
 
 namespace WebClient.Account
 { 
@@ -19,12 +19,15 @@ namespace WebClient.Account
             if (!IsPostBack)
 
             {
-                TypeUser.DataValueField = "NameType";
-                TypeUser.DataSource = IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes();
-                TypeUser.DataBind();
-                Groups.DataValueField = "NameGroup";
-                Groups.DataSource = IceApplication.getInstance().SessionPrx.getGroupManager().getAllGroups();
-                Groups.DataBind();
+                
+                    TypeUser.DataValueField = "NameType";
+                    TypeUser.DataSource = IceApplication.getInstance().SessionPrx.getUserManager().getAllUserTypes();
+                    TypeUser.DataBind();
+                
+                    Groups.DataValueField = "NameGroup";
+                    Groups.DataSource = IceApplication.getInstance().SessionPrx.getGroupManager().getAllGroups();
+                    Groups.DataBind();
+                
             }
            
         }
@@ -33,8 +36,9 @@ namespace WebClient.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-
-            
+           
+            // TimeTableEntry t = new TimeTableEntry();
+            // Group g = new Group();
             User user = new User(Login.Text, Password.Text, Fam.Text, Name.Text, Otch.Text, 
                 IceApplication.getInstance().SessionPrx.getUserManager().getUserType(TypeUser.SelectedValue),
                 IceApplication.getInstance().SessionPrx.getGroupManager().getGroupbyName(Groups.SelectedValue));

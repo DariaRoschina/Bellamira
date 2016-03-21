@@ -13,6 +13,8 @@ namespace Bellamira.src
 
         private GroupManager gmp = new GroupManagerImpl();
 
+        private TimeTableManager te = new TimeTableManager();
+
         public override UserManagerPrx getUserManager(Current current__)
         {
             Console.WriteLine("SessionImpl.getUserManager() called");
@@ -30,9 +32,9 @@ namespace Bellamira.src
 
         public override TimeTableManagerPrx getTimeTableManager(Current current__)
         {
-
-            Console.WriteLine("SessionImpl.getGroupManager() called");
-            throw new NotImplementedException();
+            Console.WriteLine("SessionImpl.getTimeTableManager() called");
+            TimeTableManagerPrx tm = TimeTableManagerPrxHelper.uncheckedCast(current__.adapter.addWithUUID(te));
+            return tm;
         }
     }
 }
